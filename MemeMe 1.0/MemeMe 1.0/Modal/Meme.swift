@@ -42,8 +42,8 @@
     
     func cancelBtnWasPressed(){
         imagePickerView?.image = nil
-        topTextFieldProperties()
-        bottomTextFieldProperties()
+        setupTextField(tf: topTextField, text: "TOP")
+        setupTextField(tf: bottomTextField, text: "BOTTOM")
         shareBtn.isEnabled = false
     }
     

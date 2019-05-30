@@ -36,9 +36,4 @@ extension GetImgViewController  {
         textField.resignFirstResponder()
         return true;
     }
-    
-    func crop(){
-        imagePicker.allowsEditing = true
-    }
-    
 }
