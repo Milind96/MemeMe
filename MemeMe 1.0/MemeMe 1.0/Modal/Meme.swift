@@ -11,6 +11,7 @@
  
  extension GetImgViewController {
     
+    
     struct Meme {
         let topText : String
         let bottomText : String
@@ -20,7 +21,12 @@
     
     func save() {
         // Create the meme
-        _ = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: self.imagePickerView.image!, memedImage: generateMemedImage())
+        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: self.imagePickerView.image!, memedImage: generateMemedImage())
+            
+            // Add it to the memes array in the Application Delegate
+            let object = UIApplication.shared.delegate
+            let appDelegate = object as! AppDelegate
+            appDelegate.memes.append(meme)
     }
     
     func generateMemedImage() -> UIImage {

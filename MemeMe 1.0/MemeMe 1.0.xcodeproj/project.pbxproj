@@ -15,6 +15,10 @@
 		A39C6CD422983AF2009FD554 /* ViewUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39C6CD322983AF2009FD554 /* ViewUp.swift */; };
 		A39C6CD622983F0C009FD554 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39C6CD522983F0C009FD554 /* ImagePicker.swift */; };
 		A3D070FA229F89090092E953 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D070F9229F89090092E953 /* Meme.swift */; };
+		A3FC30A422B28F47008FDD41 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FC30A322B28F47008FDD41 /* TableViewController.swift */; };
+		A3FC30A622B28FA9008FDD41 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FC30A522B28FA9008FDD41 /* CollectionViewController.swift */; };
+		A3FC30AD22B293B2008FDD41 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FC30AC22B293B2008FDD41 /* TableView.swift */; };
+		A3FC30B322B3A716008FDD41 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FC30B222B3A716008FDD41 /* CollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		A39C6CD322983AF2009FD554 /* ViewUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUp.swift; sourceTree = "<group>"; };
 		A39C6CD522983F0C009FD554 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		A3D070F9229F89090092E953 /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Meme.swift; path = "MemeMe 1.0/Modal/Meme.swift"; sourceTree = SOURCE_ROOT; };
+		A3FC30A322B28F47008FDD41 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		A3FC30A522B28FA9008FDD41 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		A3FC30AC22B293B2008FDD41 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		A3FC30B222B3A716008FDD41 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +68,7 @@
 		A369716F2295B72C00B61EE4 /* MemeMe 1.0 */ = {
 			isa = PBXGroup;
 			children = (
+				A3FC30A722B29274008FDD41 /* Views */,
 				A3D070D3229E7FB00092E953 /* ViewController */,
 				A39C6CD9229D7B55009FD554 /* Modal  */,
 				A39C6CD822984676009FD554 /* Supporting Files */,
@@ -93,8 +102,19 @@
 				A36971722295B72C00B61EE4 /* GetImgViewController.swift */,
 				A39C6CD522983F0C009FD554 /* ImagePicker.swift */,
 				A39C6CD322983AF2009FD554 /* ViewUp.swift */,
+				A3FC30A322B28F47008FDD41 /* TableViewController.swift */,
+				A3FC30A522B28FA9008FDD41 /* CollectionViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		A3FC30A722B29274008FDD41 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A3FC30AC22B293B2008FDD41 /* TableView.swift */,
+				A3FC30B222B3A716008FDD41 /* CollectionView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,9 +189,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3FC30B322B3A716008FDD41 /* CollectionView.swift in Sources */,
 				A36971732295B72C00B61EE4 /* GetImgViewController.swift in Sources */,
+				A3FC30A422B28F47008FDD41 /* TableViewController.swift in Sources */,
 				A39C6CD622983F0C009FD554 /* ImagePicker.swift in Sources */,
 				A39C6CD422983AF2009FD554 /* ViewUp.swift in Sources */,
+				A3FC30A622B28FA9008FDD41 /* CollectionViewController.swift in Sources */,
+				A3FC30AD22B293B2008FDD41 /* TableView.swift in Sources */,
 				A3D070FA229F89090092E953 /* Meme.swift in Sources */,
 				A36971712295B72C00B61EE4 /* AppDelegate.swift in Sources */,
 			);
