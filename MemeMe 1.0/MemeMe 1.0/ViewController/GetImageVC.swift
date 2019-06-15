@@ -22,6 +22,7 @@ class GetImageVC: UIViewController, UINavigationControllerDelegate, UIImagePicke
 
     
 
+    @IBOutlet weak var clearBtn: UIBarButtonItem!
     @IBOutlet weak var cancelBtn: UIBarButtonItem!
     @IBOutlet weak var shareBtn: UIBarButtonItem!
     @IBOutlet weak var topToolbar: UIToolbar!
@@ -54,9 +55,11 @@ class GetImageVC: UIViewController, UINavigationControllerDelegate, UIImagePicke
         subscribeToKeyboardNotifications()
         if imagePickerView.image == nil {
             shareBtn.isEnabled = false
+            clearBtn.isEnabled = false
         }
         else{
             shareBtn.isEnabled = true
+            clearBtn.isEnabled = true
         }
     }
 
@@ -115,7 +118,11 @@ class GetImageVC: UIViewController, UINavigationControllerDelegate, UIImagePicke
     }
     
     @IBAction func cancelBtnPressed(_ sender: Any) {
-        cancelBtnWasPressed()
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func clearlBtnPressed(_ sender: Any) {
+        clearBtnWasPressed()
     }
     
 }

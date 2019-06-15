@@ -9,7 +9,7 @@
 import UIKit
 
 
-class SentMemeCollectionVC: UIViewController, UICollectionViewDataSource, UITableViewDelegate {
+class SentMemeCollectionVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     var memes: [GetImageVC.Meme]! {
         let object = UIApplication.shared.delegate
@@ -33,7 +33,7 @@ class SentMemeCollectionVC: UIViewController, UICollectionViewDataSource, UITabl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionView", for:indexPath) as? CollectionView {
             let image = memes[indexPath.row]
-            cell.sentImage.image = image.memedImage
+            cell.upateTableViews(Meme: image)
             return cell
         }else{
             return CollectionView()
@@ -41,7 +41,7 @@ class SentMemeCollectionVC: UIViewController, UICollectionViewDataSource, UITabl
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath:IndexPath) {
-        
+        print("Selected Cell: \(indexPath.row)")
         print("in collection view")
         let detailController = self.storyboard!.instantiateViewController(withIdentifier: "MemeDetailVC") as! MemeDetailVC
         detailController.meme = self.memes[(indexPath as NSIndexPath).row]
@@ -58,10 +58,11 @@ class SentMemeCollectionVC: UIViewController, UICollectionViewDataSource, UITabl
         super.viewDidLoad()
         let space:CGFloat = 3.0
         let dimension = (view.frame.size.width - (2 * space)) / 3.0
+        let vertical = (view.frame.size.height - (2 * space)) / 3.0
         
         flowLayout.minimumInteritemSpacing = space
         flowLayout.minimumLineSpacing = space
-        flowLayout.itemSize = CGSize(width: dimension, height: dimension)
+        flowLayout.itemSize = CGSize(width: dimension, height: vertical)
         
     }
     

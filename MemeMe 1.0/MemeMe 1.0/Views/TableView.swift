@@ -15,7 +15,7 @@ class TableView: UITableViewCell {
     
     func upateTableViews(Meme : GetImageVC.Meme){
         sentImage.image = Meme.memedImage
-        sentImgTitle.text = Meme.topText + Meme.bottomText
+        sentImgTitle.text = Meme.topText + "...." + Meme.bottomText
     }
 
 }

@@ -46,7 +46,7 @@
         return memedImage
     }
     
-    func cancelBtnWasPressed(){
+    func clearBtnWasPressed(){
         imagePickerView?.image = nil
         setupTextField(tf: topTextField, text: "TOP")
         setupTextField(tf: bottomTextField, text: "BOTTOM")
