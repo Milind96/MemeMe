@@ -20,7 +20,7 @@ class SentMemeTableVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     @IBOutlet weak var tableView: UITableView!
     
     @IBAction func createMeme(_ sender: Any) {
-       createMeme()
+        createMeme()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,27 +39,23 @@ class SentMemeTableVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         }
     }
     
-     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let detailController = self.storyboard!.instantiateViewController(withIdentifier: "MemeDetailVC") as! MemeDetailVC
-        
         detailController.meme = self.memes[(indexPath as NSIndexPath).row]
-        
         self.navigationController!.pushViewController(detailController, animated: true)
         
     }
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
-
+    
 }
