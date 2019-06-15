@@ -1,5 +1,5 @@
 //
-//  TableViewController.swift
+//  SentMemeTableVC.swift
 //  MemeMe 1.0
 //
 //  Created by milind shelat on 13/06/19.
@@ -9,16 +9,19 @@
 import UIKit
 
 
-
-class TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SentMemeTableVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var memes: [GetImgViewController.Meme]! {
+    var memes: [GetImageVC.Meme]! {
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
         return appDelegate.memes
     }
     
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBAction func createMeme(_ sender: Any) {
+       createMeme()
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print (memes.count)
@@ -36,8 +39,21 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let detailController = self.storyboard!.instantiateViewController(withIdentifier: "MemeDetailVC") as! MemeDetailVC
+        
+        detailController.meme = self.memes[(indexPath as NSIndexPath).row]
+        
+        self.navigationController!.pushViewController(detailController, animated: true)
+        
+    }
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,15 +61,5 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -13,7 +13,7 @@ class CollectionView: UICollectionViewCell {
     
     @IBOutlet weak var sentImage: UIImageView!
     
-    func upateTableViews(Meme : GetImgViewController.Meme){
+    func upateTableViews(Meme : GetImageVC.Meme){
         sentImage.image = Meme.memedImage
         
     }

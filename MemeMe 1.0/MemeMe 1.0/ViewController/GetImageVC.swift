@@ -18,7 +18,7 @@ extension UITextField {
     
 }
 
-class GetImgViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate {
+class GetImageVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate {
 
     
 
@@ -93,6 +93,7 @@ class GetImgViewController: UIViewController, UINavigationControllerDelegate, UI
         activityController.completionWithItemsHandler = { (activity, success, items, error) in
             if success {
                self.save()
+                self.dismiss(animated: true, completion: nil)
             }
         }
     }
@@ -112,8 +113,6 @@ class GetImgViewController: UIViewController, UINavigationControllerDelegate, UI
         tf.text = text
         tf.delegate = self
     }
-
-    
     
     @IBAction func cancelBtnPressed(_ sender: Any) {
         cancelBtnWasPressed()

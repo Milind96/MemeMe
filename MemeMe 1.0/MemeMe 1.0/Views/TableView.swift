@@ -13,7 +13,7 @@ class TableView: UITableViewCell {
     @IBOutlet weak var sentImage: UIImageView!
     @IBOutlet weak var sentImgTitle : UILabel!
     
-    func upateTableViews(Meme : GetImgViewController.Meme){
+    func upateTableViews(Meme : GetImageVC.Meme){
         sentImage.image = Meme.memedImage
         sentImgTitle.text = Meme.topText + Meme.bottomText
     }

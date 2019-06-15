@@ -11,7 +11,7 @@ import UIKit
 
 let imagePicker = UIImagePickerController()
 
-extension GetImgViewController  {
+extension GetImageVC  {
 
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

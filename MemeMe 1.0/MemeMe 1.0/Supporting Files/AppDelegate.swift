@@ -12,7 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    var memes = [GetImgViewController.Meme]()
+    var memes = [GetImageVC.Meme]()
 
 }
 
