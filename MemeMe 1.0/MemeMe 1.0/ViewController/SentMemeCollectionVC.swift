@@ -11,7 +11,8 @@ import UIKit
 
 class SentMemeCollectionVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    var memes: [GetImageVC.Meme]! {
+    let kCollectionViewCellID = "CollectionView"
+    var memes: [Meme]! {
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
         return appDelegate.memes
@@ -31,12 +32,12 @@ class SentMemeCollectionVC: UIViewController, UICollectionViewDataSource, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionView", for:indexPath) as? CollectionView {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCollectionViewCellID, for:indexPath) as? MemeMeCollectionView {
             let image = memes[indexPath.row]
             cell.upateTableViews(Meme: image)
             return cell
         }else{
-            return CollectionView()
+            return MemeMeCollectionView()
         }
     }
     

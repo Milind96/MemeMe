@@ -11,7 +11,8 @@ import UIKit
 
 class SentMemeTableVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var memes: [GetImageVC.Meme]! {
+    let kTableViewCellID = "TableView"
+    var memes: [Meme]! {
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
         return appDelegate.memes
@@ -30,12 +31,12 @@ class SentMemeTableVC: UIViewController, UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "TableView") as? TableView{
+        if let cell = tableView.dequeueReusableCell(withIdentifier: kTableViewCellID) as? MemeMeTableView{
             let image = memes[indexPath.row]
             cell.upateTableViews(Meme: image)
             return cell
         }else{
-            return TableView()
+            return MemeMeTableView()
         }
     }
     
@@ -46,6 +47,21 @@ class SentMemeTableVC: UIViewController, UITableViewDelegate, UITableViewDataSou
         self.navigationController!.pushViewController(detailController, animated: true)
         
     }
+    
+//    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+//        return true
+//    }
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//
+//        if editingStyle == .delete {
+//            memes.remove(at: indexPath.row)
+//            tableView.beginUpdates()
+//            tableView.deleteRows(at: [indexPath], with: .automatic)
+//            tableView.endUpdates()
+//        }
+//
+//    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
